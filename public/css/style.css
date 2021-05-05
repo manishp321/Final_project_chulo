@@ -1,0 +1,397 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #d1c8c8;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .logo {
+    width: 115px;
+}
+
+.header .buttons {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.nav {
+    background-color: #d1c8c8;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav a {
+    color: black;
+    text-decoration: none;
+}
+
+.active {
+    font-weight: bolder;
+}
+
+.content {
+    padding: 16px;
+    background-color: #e6dedee1;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+}
+
+.sticky+.content {
+    padding-top: 200px;
+}
+
+footer {
+    padding: 50px 0;
+    background: #d1c8c8;
+    color: #ffffff;
+}
+
+.footer h3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.footer ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer .copyright {
+    text-align: right;
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 13px;
+    opacity: 0.6;
+    margin-right: 50px;
+}
+
+.column {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+figcaption {
+    text-align: center;
+    font-weight: bold;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.shop-item {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+
+.shop-item-image {
+    opacity: 1;
+    display: block;
+    width: 300px;
+    height: 200px;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.shop-item .shop-item-details {
+    transition: 0.5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.shop-item:hover .shop-item-image {
+    opacity: 0.3;
+    background: transparent;
+}
+
+.shop-item .shop-item-details:hover {
+    opacity: 1;
+}
+
+.btn {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: #3498db;
+    border-radius: 0.6em;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    background-color: #eee;
+}
+
+.detail img {
+    margin: 50px;
+}
+
+.detail-des {
+    width: 50%;
+    margin-left: 50px;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: 0.5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #eb5757;
+    border: none;
+    border-radius: 0.3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #cc4c4c;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56ccf2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+.content-section {
+    margin: 1em;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons .btn-login {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: #3498db;
+    border: none;
+    border-radius: 0.6em;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    padding: 1em 1.5em;
+    text-align: center;
+    font-weight: 700;
+    margin: 20px;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.wrapper {
+    background-color: #f4f2f7;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 15px 20px;
+    border-radius: 10px
+}
+
+h4 {
+    font-weight: 800;
+    color: #888
+}
+
+label {
+    font-weight: 700;
+    color: #888;
+    font-size: 12px
+}
+
+.card-no {
+    border: none;
+    outline: none;
+    width: 80%;
+    padding-left: 8px
+}
+
+.form-control {
+    outline: none;
+    border: none;
+    box-shadow: none
+}
+
+.card-number {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 8px 2px
+}
+
+a {
+    font-size: 12px;
+    font-weight: 900;
+    margin-left: 30%
+}
+
+a {
+    text-decoration: none
+}
+
+.form-inline label {
+    font-size: 1rem
+}
+
+.focused {
+    border: 2px solid #9ab3f5
+}
+
+#form-footer a {
+    margin: 0
+}
+
+#form-footer p {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777
+}
+
+@media(max-width:395px) {
+    .form-inline label {
+        font-size: 12px
+    }
+    #form-footer p {
+        font-size: 11px
+    }
+    .card-no {
+        width: 85%
+    }
+}

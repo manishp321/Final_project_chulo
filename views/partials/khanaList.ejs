@@ -1,0 +1,9 @@
+<div class="shop-items">
+  <% data.forEach(function(each_data) { %>
+  <div class="shop-item">
+    <figcaption class="shop-item-title"><%= each_data.name %></figcaption>
+    <img class="shop-item-image" src="../img/<%=each_data.image%>" />
+    <a href="/khana/<%= each_data.iddish%>">Description</a>
+  </div>
+  <% }); %>
+</div>

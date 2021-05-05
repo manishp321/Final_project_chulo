@@ -1,0 +1,74 @@
+<script>
+  function addToCart(id, name, price, origin, image) {
+    const quantityElementNode = document.querySelector("#quantity-count");
+    const quantity = parseInt(quantityElementNode.innerHTML);
+
+    const dataToAdd = { id, name, price, origin, image, quantity };
+
+    const previousCartData = JSON.parse(localStorage.getItem("cartItem")) || [];
+
+    const isAlreadyAdded = previousCartData.find((data) => data.id == id);
+
+    if (isAlreadyAdded) {
+      alert("Item is already added to cart");
+    } else {
+      const itemToSet = [...previousCartData, dataToAdd];
+      localStorage.setItem("cartItem", JSON.stringify(itemToSet));
+    }
+  }
+
+  function handleIncrement(price) {
+    const quantityElementNode = document.querySelector("#quantity-count");
+    const quantity = parseInt(quantityElementNode.innerHTML);
+
+    const priceElementNode = document.querySelector(".shop-item-price");
+    quantityElementNode.innerHTML = quantity + 1;
+    priceElementNode.innerHTML = `${parseFloat(
+      (quantity + 1) * parseFloat(price)
+    ).toFixed(2)}€`;
+  }
+
+  function handleDecrement(price) {
+    const quantityElementNode = document.querySelector("#quantity-count");
+    const quantity = parseInt(quantityElementNode.innerHTML);
+    const priceElementNode = document.querySelector(".shop-item-price");
+
+    if (quantity > 1) {
+      quantityElementNode.innerHTML = quantity - 1;
+      priceElementNode.innerHTML = `${parseFloat(
+        (quantity - 1) * parseFloat(price)
+      ).toFixed(2)}€`;
+    }
+  }
+</script>
+<div class="">
+  <div class="detail">
+    <img src="../img/<%= data.image%>" width="380px" class="shop-item-image" />
+    <div class="detail-spec">
+      <h1 class="shop-item-title"><%= data.name %></h1>
+      <h2><%= data.origin %> Origin</h2>
+      <h2 class="shop-item-price"><%= data.price %></h2>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+        "
+      >
+        <div>
+          <button onclick="handleDecrement('<%= data.price %>')">-</button>
+          <span id="quantity-count">1</span>
+          <button onclick="handleIncrement('<%= data.price %>')">+</button>
+        </div>
+        <a
+          href="/cart"
+          type="button"
+          class="btn btn-primary shop-item-button"
+          value="add to cart"
+          onclick="addToCart('<%= data.iddish %>', '<%= data.name %>', '<%= data.price %>', '<%= data.origin %>', '<%= data.image %>')"
+          >Add to cart</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
